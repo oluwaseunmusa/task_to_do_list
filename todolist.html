@@ -1,0 +1,116 @@
+
+    
+    <html>
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+        <title>Task to do list::</title>
+            <style>
+                
+        html {
+        font-family: sans-serif;
+        background: #6887ff;
+        color: #333;
+    }
+                
+
+    /* Continer */
+                
+    .container {
+        width: 24rem;
+        margin: 20px  auto;
+        background-color: white;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25);
+    }
+                
+    h1 {
+        text-align: center;
+        margin-top: 0;
+        color: rgba(0, 0, 0, .5);
+    
+        
+     /* Input Data Style */   
+    }
+    .todo-input {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        outline: none;
+        border-radius: 0.25rem;
+        border-style: none;
+        border: solid 1px lightgray;
+        box-sizing: border-box;
+    }
+             
+     
+ 
+        /* Add Button Style */
+                
+    .add-button {
+        width: 100%;
+        font-size: 1rem;
+        outline: none;
+        border-radius: 0.25rem;
+        padding: 10px 5px;
+        margin-top: 5px;
+        color: #333;
+        border: none;
+        background: linear-gradient(45deg, #6cfd9f, #6887ff);
+    }
+                
+    .add-button:hover {
+        background: linear-gradient(45deg, #6cfd9f, #6887ff);
+        color: #fff;
+        text-align: center;
+        letter-spacing: 5px;
+    }
+                
+    
+    /* To do List */
+                
+    ul {
+        padding-left: 1.5rem;
+    }
+    ul li {
+        margin-bottom: 0.5rem;
+    }
+    li:hover {
+        cursor: pointer;
+        text-decoration: line-through;
+        color: #6887ff;
+    }
+    
+ 
+            </style>
+        </head>
+        <body>
+            <div id="todoForm" class="container">
+                <h1 id="list"><i class="far fa-list-alt" style="color: #6887ff; "></i>&nbsp;Task List</h1>
+                <input id="todoInput" class="todo-input" type="text" placeholder="Enter a new Task">
+                <input id="todoButton" class="add-button" type="button" value = "Add Task" onclick="todoList()">
+                <ul id="todoList">
+                    
+                </ul>
+                
+            </div>
+            
+            <!-- Inline JavaScript -->
+            <script>
+                
+                function todoList() {
+                var item = document.getElementById("todoInput").value;
+                var text = document.createTextNode(item);
+                var newItem = document.createElement("li");
+               
+                newItem.appendChild(text);
+                    
+                document.getElementById("todoList").appendChild(newItem);
+                }
+                
+                    
+            </script>
+        </body>
+    </html>
